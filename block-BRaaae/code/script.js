@@ -68,5 +68,4 @@ function watchMovieList(event) {
     })
     ReactDOM.render(ui, ul)
 
-
 }
