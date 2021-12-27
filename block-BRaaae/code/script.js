@@ -15,7 +15,7 @@ input.addEventListener("keyup", function (event) {
             watched: false
         })
         event.target.value = "";
-        watchMovieList(event)
+        watchMovieList(allMovies)
         event.target.value = "";
     }
 });
@@ -23,14 +23,13 @@ input.addEventListener("keyup", function (event) {
 function deleteMovie(event) {
     let id = event.target.dataset.id;
     allMovies.splice(id, 1);
-    watchMovieList()
+    watchMovieList(allMovies)
 }
 
 function handleChange(event) {
     let id = event.target.id;
-    console.log(id);
-
     allMovies[id].watched = !allMovies[id].watched
+    watchMovieList(allMovies)
 }
 
 // function ele(type, attr = {}, children) {
@@ -55,15 +54,14 @@ function handleChange(event) {
 //     return element;
 // }
 
-let ele = React.createElement;
 
-function watchMovieList(event) {
+function watchMovieList(allMovies) {
 
     let ui = allMovies.map((x, i) => {
-        let li = ele("li", { className: "list" }, x.name,
-        ele("input", { className: "margin", type: "checkbox", checked: x.watched, id: i,onChange:handleChange }),
-        ele("button", { "data-id": i, className: "button", onChange:deleteMovie }, "X"),
-        ele("hr", { className: "border" }))
+        let li = React.createElement("li", { className: "list" }, x.name,
+        React.createElement("input", { className: "margin", type: "checkbox", checked: x.watched, id: i,onClick:handleChange }),
+        React.createElement("button", { "data-id": i, className: "button", onClick:deleteMovie }, "X"),
+        React.createElement("hr", { className: "border" }))
         return li
     })
     ReactDOM.render(ui, ul)
