@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h6 className="center">All Articles</h6>
+    <div id="root">
+        
+    </div>
+    <script type="text/babel">
+        let cardInfo = {
+            title: 'City Lights in New York',
+            date: new Date('2017-01-26'),
+            comments: 67,
+            subTitle: 'The city that never sleeps.',
+            description:
+                'New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.',
+            category: 'photos',
+            imageURL:
+                'https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+        };
+        let content = (<>
+        <article className="container">
+            <img
+                src="https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
+            <div className="bg-color">
+                <h2>PHOTOS</h2>
+            </div>
+            <div className="bg-color">
+                <h2>27</h2>
+                <h2>MAR</h2>
+            </div>
+            <header className="margin">
+                <h1>{cardInfo.title}</h1>
+                <h3>{cardInfo.subTitle}</h3>
+            </header>
+            <section className="margin">
+                <div>
+                    <p>{cardInfo.description}</p>
+                </div>
+                <div className="space">
+                    <span>6 mins ago</span>
+                    <span className="margin-left">{cardInfo.comments} comments</span>
+                </div>
+            </section>
+        </article>
+        </>
+        );
+        let array = (
+            <>
+            {content}
+            {content}
+            {content}
+            </>
+        )
+        ReactDOM.render(array,document.getElementById("root"))
+    </script>
+</body>
+
+</html>
