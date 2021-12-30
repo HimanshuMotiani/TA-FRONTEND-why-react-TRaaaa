@@ -14,7 +14,7 @@ function App() {
            <button onClick={()=>handleClickName("Bran")}>Bran</button> 
            {
                fruits.map((fruit)=> (
-                <button onClick={()=>handleClickFruit(fruit.value)}>{fruit.value}</button>
+                <button key={fruit.id} onClick={()=>handleClickFruit(fruit.value)}>{fruit.value}</button>
                ))
            }
         </>
