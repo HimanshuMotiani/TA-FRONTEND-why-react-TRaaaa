@@ -40,4 +40,5 @@ function handleClickFruit(name) {
     alert(`${name}`)
 }
 
+
 export default App;
