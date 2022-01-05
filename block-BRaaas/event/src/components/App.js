@@ -21,7 +21,6 @@ function App() {
     );
 }
 
-
 function handleClick() {
     alert(`Hello React Event`)
 }
