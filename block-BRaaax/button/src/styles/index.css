@@ -1,0 +1,29 @@
+.app {
+    text-align: -webkit-center;
+}
+.button {
+    background: powderblue;
+    border: 0;
+    display: block;
+    margin-top: 10px;
+}
+.button-small{
+    padding: 10px 30px;
+}
+.button-medium {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+.button-large {
+    padding: 14px 60px;
+    font-size: 1.1rem;
+}
+.button-primary {
+    background: blue;
+}
+.button-secondary {
+    background: red;
+}
+.button-tertiary {
+    background: green;
+}
